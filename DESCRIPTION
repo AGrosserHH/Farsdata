@@ -1,0 +1,21 @@
+Package: Farsdata
+Type: Package
+Title: Package for FARS data
+Version: 0.1.0
+Author: Andreas Grosser
+Maintainer: Andreas Grosser <agrossi@gmx.de>
+Description: Package to analysze Fars data
+License: GPL (>=3)
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    readr,
+    tidyr,
+    maps
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1

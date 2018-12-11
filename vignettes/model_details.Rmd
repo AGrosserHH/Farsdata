@@ -1,0 +1,57 @@
+---
+title: "Documentation of R package"
+author: "Andreas Grosser"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+```{r, echo = FALSE, include = FALSE}
+library(Farsdata)
+library(dplyr)
+library(maps)
+```
+
+This vignette is a brief overview of the Farsdata package and its functionality. It provides some useful functions for its analysis.
+
+## Exported functions
+ 
+Three functions are exported so that the user can use them
+
+- `fars_read()`
+- `fars_summarize_years()`
+- `fars_map_state()`
+
+Furthermore I desscribe how the functions works. I am using the FARS data files 2013-2014 which can be found in the directory Farsdata.
+
+## FARS Read function
+
+The function `fars_read()` reads a data file from a path (as argument). It returns a loaded data set.
+
+```{r fars_read_example}
+filename <- system.file("extdata/accident_2013.csv.bz2", package = "Farsdata")
+fars_read(filename)
+```
+
+## FARS Summarize function
+
+The function `fars_summarize_years()` takes a vector/ list of years as an argument and returns a tables of accidents per month and year.
+
+```{r fars_summarize_years_example}
+setwd(system.file("extdata", package = "Farsdata"))
+fars_summarize_years(2013:2014)
+```
+
+## FARS Map state
+
+The function `fars_map_state()` takes a state and a year as inputs and returns a plot of the state and its accident locations.
+
+```{r fars_map_state_example}
+setwd(system.file("extdata", package = "Farsdata"))
+fars_map_state(45, 2014)
+```
