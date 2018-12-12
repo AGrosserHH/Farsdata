@@ -8,6 +8,7 @@ Description: Package to analysze Fars data
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 3.1.0)
 Imports:
     dplyr,
     readr,
